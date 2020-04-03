@@ -22,7 +22,14 @@ export default function Home() {
     await fetch("https://api.github.com/users/Pedroh1510/repos")
       .then(response => response.json())
       .then(data => {
-        setRepositories(data);
+        setRepositories(
+          data.filter(repo => {
+            if (!repo.fork) {
+              return true;
+            }
+            return false;
+          })
+        );
       })
       .catch(err => {
         console.log(err);
