@@ -41,16 +41,6 @@ export default function Home() {
     getRepositories();
   }, []);
 
-  function setIcon(icon) {
-    if (icon === "JavaScript") {
-      return <DiJavascript1 size={16} color="#F0f850" />;
-    }
-    if (icon === "Python") {
-      return <DiPython size={16} color="#F0f850" />;
-    }
-    return null;
-  }
-
   return (
     <div className="container-visual">
       <h1>{contentUser.name}</h1>
@@ -63,6 +53,7 @@ export default function Home() {
           {repositories.map(repo => (
             <li key={repo.id}>
               <h3 className="title">{repo.name}</h3>
+
               <h3>
                 Linguagem:{repo.language}
                 {repo.language === "JavaScript" ? (
@@ -71,8 +62,11 @@ export default function Home() {
                   <DiPython size={20} color="#F0f850" />
                 ) : null}
               </h3>
-              {/* {() => setIcon(repo.language)} */}
-              <h2>Descrição: {repo.description}</h2>
+
+              {repo.description !== null ? (
+                <h2>Descrição: {repo.description}</h2>
+              ) : null}
+
               {repo.homepage !== null ? (
                 repo.homepage !== "" ? (
                   <h3>
