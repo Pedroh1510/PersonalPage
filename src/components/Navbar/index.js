@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { MdHome } from "react-icons/md";
 
@@ -9,10 +10,10 @@ export default function Navbar() {
     <div className="visual-header">
       <ul>
         <li>
-          <a href="/">
+          <Link to="/">
             <MdHome size={15} />
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/pedro-henrique-martins-da-silva-849959143">
