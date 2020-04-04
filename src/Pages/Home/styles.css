@@ -2,20 +2,8 @@
   color: #ccc5c1;
   margin: 0 24px;
 }
-h1 {
+.n-repositories {
   text-align: center;
-  color: #283027;
-}
-.visual-header {
-  color: #283027;
-  margin: auto;
-  width: 100%;
-  max-width: 710px;
-  display: flex;
-  padding: 0 10px;
-  border: 2px solid #283027;
-  border-radius: 5px;
-  justify-content: space-between;
 }
 .visual-repositories {
   max-width: 710px;
