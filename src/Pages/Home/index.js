@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { DiPython, DiJavascript1 } from "react-icons/di";
 
-import "./styles.css";
+//import "./styles.css";
+import {
+  Container,
+  SubTitle,
+  ContainerRepositories,
+  List,
+  Url,
+} from "./styles";
 
 import Navbar from "../../components/Navbar";
 
-export default function Home() {
+function Home() {
   const [contentUser, setContentUser] = useState({});
   const [repositories, setRepositories] = useState([]);
 
@@ -17,6 +24,7 @@ export default function Home() {
       })
       .catch((err) => {
         console.log(err);
+        alert("Limite excidido, tente novamente em 10 minutos");
       });
   }
 
@@ -46,13 +54,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="container-visual">
+      <Container className="container-visual">
         <h1>Pedro Henrique</h1>
-        <h3 className="n-repositories">
+        <SubTitle className="n-repositories">
           Numero de repositorios no Github: {contentUser["public_repos"]}
-        </h3>
-        <div className="visual-repositories">
-          <ul>
+        </SubTitle>
+        <ContainerRepositories className="visual-repositories">
+          <List>
             {repositories.map((repo) => (
               <li key={repo.id}>
                 <h3 className="title">{repo.name}</h3>
@@ -73,15 +81,17 @@ export default function Home() {
                 {repo.homepage !== null ? (
                   repo.homepage !== "" ? (
                     <h3>
-                      site: <a href={repo.homepage}>link</a>
+                      site: <Url href={repo.homepage}>Acessar</Url>
                     </h3>
                   ) : null
                 ) : null}
               </li>
             ))}
-          </ul>
-        </div>
-      </div>
+          </List>
+        </ContainerRepositories>
+      </Container>
     </>
   );
 }
+
+export default memo(Home);
