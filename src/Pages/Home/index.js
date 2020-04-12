@@ -52,7 +52,7 @@ function Home() {
   }, []);
 
   return (
-    <>
+    <div>
       <Navbar />
       <Container className="container-visual">
         <h1>Pedro Henrique</h1>
@@ -90,7 +90,7 @@ function Home() {
           </List>
         </ContainerRepositories>
       </Container>
-    </>
+    </div>
   );
 }
 
