@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { MdHome } from "react-icons/md";
 
-import { List, Button } from "./styles";
+import { Container, List, Button } from "./styles";
 
 function Navbar() {
   return (
-    <div className="visual-header">
+    <Container>
       <List>
         <Button>
           <Link to="/">
@@ -16,9 +16,14 @@ function Navbar() {
           </Link>
         </Button>
         <Button>
+          <Link to="/about">About</Link>
+        </Button>
+      </List>
+      <List>
+        <Button>
           <a href="https://www.linkedin.com/in/pedro-henrique-martins-da-silva-849959143">
             <AiFillLinkedin size={15} />
-            About
+            Linkedin
           </a>
         </Button>
         <Button>
@@ -28,7 +33,7 @@ function Navbar() {
           </a>
         </Button>
       </List>
-    </div>
+    </Container>
   );
 }
 
