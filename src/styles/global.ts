@@ -12,4 +12,8 @@ export default createGlobalStyle`
     color: ${props => props.theme.colors.text};
     font: 400 1.6rem Roboto, sans-serif;
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `
