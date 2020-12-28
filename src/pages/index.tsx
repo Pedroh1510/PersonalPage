@@ -49,8 +49,12 @@ const Home: React.FC<UserData> = ({ user, repositories }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   // https://api.github.com/users/pedroh1510
-  const user = await (await fetch('http://localhost:3333')).json()
-  const repos = await (await fetch('http://localhost:3333/repos')).json()
+  const user = await (
+    await fetch('https://api.github.com/users/pedroh1510')
+  ).json()
+  const repos = await (
+    await fetch('https://api.github.com/users/pedroh1510/repos')
+  ).json()
 
   repos.filter(repo => {
     if (!repo.fork) {
