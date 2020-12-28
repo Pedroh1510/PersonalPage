@@ -14,8 +14,12 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
       <div>
-        <a>Linkedin</a>
-        <a>GitHub</a>
+        <Link href="https://www.linkedin.com/in/pedroh1510/">
+          <a>Linkedin</a>
+        </Link>
+        <Link href="https://github.com/Pedroh1510">
+          <a>GitHub</a>
+        </Link>
       </div>
     </Container>
   )
