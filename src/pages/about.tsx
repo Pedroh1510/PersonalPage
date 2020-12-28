@@ -7,10 +7,11 @@ const about: React.FC = () => {
       <Navbar />
       <title>Sobre</title>
       <Container>
-      <h2>Ola, sou o Pedro</h2>
+        <h2>Ola, sou o Pedro</h2>
         <p>
           Eu sou desenvolvedor full-stack, atualmente cursando ciência da
           computação.
+        </p>
       </Container>
     </>
   )
